@@ -1,12 +1,12 @@
-package org.util.ui.interfaceUnits;
+package org.util.cinterface.interfaceUnits;
 import java.awt.Graphics;
 
-import org.util.ui.Dimension;
-import org.util.ui.UI;
-public class Label extends UI {
+import org.util.cinterface.Dimension;
+import org.util.cinterface.CUI;
+public class Label extends CUI {
 	private String label;
 	
-	public Label(Dimension plane, UI container, String label) {
+	public Label(Dimension plane, CUI container, String label) {
 		super(plane, container);
 		setLabel(label);
 	}

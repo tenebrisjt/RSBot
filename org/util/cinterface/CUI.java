@@ -1,25 +1,24 @@
-package org.util.ui;
+package org.util.cinterface;
 import java.awt.Graphics;
 import java.awt.Image;
+
 import org.Context;
 import org.powerbot.script.AbstractScript;
-import org.util.ui.interfaceUnits.transparentBox.Panel;
-
-public abstract class UI {
-	/*
-	 * this is only a project, i understand 
-	 * that there are already libraries for the same thing
-	 * that are most likely better written
-	 * 
-	 */
+import org.util.cinterface.interfaceUnits.transparentBox.Panel;
+/**
+ * @deprecated  Due to this being a project, 
+ * will be using swing for the time being for easier programming on the fly
+ */
+public abstract class CUI {
+	
 	protected Dimension plane;
-	private UI container;
+	private CUI container;
 	private Panel panel;
-	public UI(Dimension plane){
+	public CUI(Dimension plane){
 		this.plane = setPlane(plane);
 	}
 	
-	public UI(Dimension plane, UI container){
+	public CUI(Dimension plane, CUI container){
 		this(plane);
 		if(container instanceof Panel){
 			setPanel((Panel)container);
@@ -39,11 +38,11 @@ public abstract class UI {
 		return plane;
 	}
 	
-	public UI setContainer(UI container){
+	public CUI setContainer(CUI container){
 		return this.container = container;
 	}
 	
-	public UI getContainer(){
+	public CUI getContainer(){
 		return container;
 	}
 	

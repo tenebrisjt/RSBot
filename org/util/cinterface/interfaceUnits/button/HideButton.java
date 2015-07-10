@@ -1,16 +1,16 @@
-package org.util.ui.interfaceUnits.button;
+package org.util.cinterface.interfaceUnits.button;
 
 import java.awt.Image;
 
 import org.Context;
 import org.powerbot.script.AbstractScript;
-import org.util.ui.Dimension;
-import org.util.ui.UI;
+import org.util.cinterface.Dimension;
+import org.util.cinterface.CUI;
 
 public class HideButton extends Button {
 	Image minimizeImg, maximizeImg;
 			
-	public HideButton(Dimension plane, UI container) {
+	public HideButton(Dimension plane, CUI container) {
 		super(plane, container);
 		
 	}

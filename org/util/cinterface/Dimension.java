@@ -1,4 +1,4 @@
-package org.util.ui;
+package org.util.cinterface;
 
 public class Dimension {
 	private int x, y, width = -1, height = -1;

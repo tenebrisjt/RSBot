@@ -1,4 +1,4 @@
-package org.util.ui.interfaceUnits.transparentBox;
+package org.util.cinterface.interfaceUnits.transparentBox;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
@@ -6,18 +6,20 @@ import java.util.*;
 
 import org.Context;
 import org.powerbot.script.AbstractScript;
-import org.powerbot.script.rt6.ClientContext;
-import org.util.ui.*;
-import org.util.ui.interfaceUnits.button.*;
-public class Panel extends UI {
-	private ArrayList<UI> components;
+import org.util.cinterface.*;
+import org.util.cinterface.interfaceUnits.button.*;
+/**
+ * @deprecated  see ui
+ */
+public class Panel extends CUI {
+	private ArrayList<CUI> components;
 	private boolean isShown = true, isLoaded = false;
 	private Image image;
-	public ClientContext ctx;
-	public Panel(Dimension plane, ClientContext ctx){
+	public Context ctx;
+	public Panel(Dimension plane, Context ctx){
 		super(plane);
 		this.ctx = ctx;
-		components = new ArrayList<UI>();
+		components = new ArrayList<CUI>();
 		submitComponent(
 				new HideButton(new Dimension(this.plane.getWidth()-20,0,20,20), this));
 		
@@ -26,7 +28,7 @@ public class Panel extends UI {
 	@Override
 	public void draw(Graphics g) {
 		if(isLoaded){
-			for(UI component : components){
+			for(CUI component : components){
 				if(component != null){
 					if(component instanceof Button){
 						component.draw(g);
@@ -59,7 +61,7 @@ public class Panel extends UI {
 		g.drawString(string, (getPlane().getX() + x), (getPlane().getY() + y +10));
 	}
 
-	public void submitComponent(UI...components){
+	public void submitComponent(CUI...components){
 		Collections.addAll(this.components, components);
 	}
 
@@ -72,7 +74,7 @@ public class Panel extends UI {
 	}
 
 	public void mousePressed(MouseEvent e){
-		for(UI component : components){
+		for(CUI component : components){
 			if(component instanceof Button){
 				((Button)component).mousePressed(e);
 			}
@@ -80,7 +82,7 @@ public class Panel extends UI {
 	}
 	
 	public void mouseReleased(){
-		for(UI component : components){
+		for(CUI component : components){
 			if(component instanceof Button){
 				((Button)component).mouseReleased();
 			}
@@ -89,7 +91,7 @@ public class Panel extends UI {
 
 	public void load(AbstractScript<Context> script){
 		image = script.downloadImage("http://imageshack.us/a/img829/7638/r5ga.png");
-		for(UI component : components){
+		for(CUI component : components){
 			if(component instanceof Button){
 				((Button)component).load(script);
 			}
