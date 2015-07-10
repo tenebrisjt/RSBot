@@ -13,8 +13,7 @@ public class DarkSmelter extends PollingScript<Context> {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SetupUi frame = new SetupUi("DarkSmither", ctx);
-					frame.setVisible(true);
+					ctx.setupUi.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
