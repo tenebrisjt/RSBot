@@ -1,6 +1,8 @@
 package org.script;
 import java.awt.EventQueue;
 
+import javax.swing.SwingUtilities;
+
 import org.Context;
 import org.powerbot.script.PollingScript;
 import org.powerbot.script.Script;
@@ -10,7 +12,7 @@ import org.script.darkSmelter.gui.SetupUi;
 public class DarkSmelter extends PollingScript<Context> {
 	@Override
 	public void start(){
-		EventQueue.invokeLater(new Runnable() {
+		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					ctx.setupUi.setVisible(true);
