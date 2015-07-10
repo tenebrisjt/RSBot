@@ -30,7 +30,7 @@ public class DarkSmelter extends PollingScript<Context> {
 	
 	@Override
 	public void stop(){
-		ctx.setupUi.mainTabbedPane.smeltingTab.paint.updater.running = false;
+		ctx.smithingPaint.updater.running = false;
 	}
 
 }

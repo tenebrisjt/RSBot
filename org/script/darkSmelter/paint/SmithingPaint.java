@@ -23,7 +23,8 @@ public class SmithingPaint extends JFrame {
 
 	boolean minimized = false;
 	Button toggleButton;
-	JLabel timeLabel, xpLabel, profitLabel, barsSmeltedLabel, title;
+	public JLabel xpLabel, barsSmeltedLabel, timeLabel, profitLabel;
+	JLabel title;
 	public SmithingPaint(Context ctx) {
 		updater = new PaintUpdater<Context>(this, ctx);
 		contentPane = new JPanel();

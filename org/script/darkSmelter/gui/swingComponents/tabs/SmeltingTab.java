@@ -25,7 +25,6 @@ public class SmeltingTab extends JPanel{
 	JList<String> operationsList;
 	JButton beginButton;
 	public HashMap<String, Integer[]> oresToUse;
-	public SmithingPaint paint;
 	@SuppressWarnings({ "unchecked", "serial" })
 	public SmeltingTab(Context ctx) {
 		oresToUse = new HashMap<String, Integer[]>();
@@ -71,8 +70,7 @@ public class SmeltingTab extends JPanel{
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							paint = new SmithingPaint(ctx);
-							paint.setVisible(true);
+							ctx.smithingPaint.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

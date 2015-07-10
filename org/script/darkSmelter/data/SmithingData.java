@@ -1,13 +1,9 @@
-package org.script;
+package org.script.darkSmelter.data;
 
 import java.util.HashMap;
-
-import org.Accessor;
-import org.Context;
-
 public class SmithingData{
 	public Integer[] oresToWithdraw;
-	public int primaryOre, secondaryOre, primaryWithdraw, secondaryWithdraw;
+	public int primaryOre, secondaryOre, primaryWithdraw, secondaryWithdraw, xpGained = -1, barsSmelted = 0;
 	public boolean usingSecondaryOre, superHeating = false;
 	public String barToSmelt;
 	public static HashMap<String, Double> BAR_XPS = new HashMap<String, Double>();

@@ -17,9 +17,14 @@ public class TimeUtil{
 			    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
 	}
 	
-	public static String timeRunning(){
+	public static String formatTimeRunning(){
 		return timeFormat(System.currentTimeMillis()-START_TIME);
 	}
+	
+	public static long timeRunning(){
+		return System.currentTimeMillis() - START_TIME;
+	}
+	
 	
 	public static int  perHour(int amount){
 		return (int) ((amount) * 3600000D / (System.currentTimeMillis() - START_TIME));
